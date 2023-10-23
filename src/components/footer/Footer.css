@@ -1,0 +1,7 @@
+.footer_box{
+    background-color: #000;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    color: white;
+}

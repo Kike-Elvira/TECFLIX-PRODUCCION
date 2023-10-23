@@ -32,6 +32,30 @@ const SeccionContenido = () => {
       image: image4,
       id: 4,
     },
+    {
+      Titulo: "El mundo",
+      Descripcion: "Trata sobre un mundo de enanos",
+      image: image1,
+      id: 5,
+    },
+    {
+      Titulo: "A mimir",
+      Descripcion: "Trata sobre como mimir eternamente",
+      image: image2,
+      id: 6,
+    },
+    {
+      Titulo: "COCO",
+      Descripcion: "Trata sobre MAMA COCO",
+      image: image3,
+      id: 7,
+    },
+    {
+      Titulo: "El PANSHOOO",
+      Descripcion: "Trata sobre PANSHO",
+      image: image4,
+      id: 8,
+    },
   ];
 
   return (

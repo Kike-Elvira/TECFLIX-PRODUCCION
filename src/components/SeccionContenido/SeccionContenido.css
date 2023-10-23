@@ -1,4 +1,7 @@
 .content_box{
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: #111111;
+    color: white;
 }
