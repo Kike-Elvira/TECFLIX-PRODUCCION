@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import { useState } from "react";
+import Header from "./components/header/Header";
+import "../src/assets/css/reset.css";
+import SeccionContenido from "./components/SeccionContenido/SeccionContenido";
 function App() {
+  const [isHover, setHover] = useState(false);
+
+  const handleSearch = () => {
+    setHover(true);
+  };
+  const handleaNoSearch = () => {
+    setHover(false);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header
+        handleSearch={handleSearch}
+        handleaNoSearch={handleaNoSearch}
+        isHover={isHover}
+      ></Header>
+      <div onClick={handleaNoSearch}>
+        <SeccionContenido />
+      </div>
+    </>
   );
 }
 

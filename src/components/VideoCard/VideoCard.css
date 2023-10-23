@@ -1,0 +1,17 @@
+.videocar_box{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.videocard_title{
+
+}
+
+.videocard_image{
+    width: 20rem;
+}
+
+.videocard_description{
+
+}

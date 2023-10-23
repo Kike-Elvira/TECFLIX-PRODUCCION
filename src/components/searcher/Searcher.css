@@ -1,0 +1,27 @@
+.searcher_form {
+    opacity: 0;
+    transition: opacity 0.5s; /* Transición de 0.5 segundos para la propiedad opacity */
+  }
+  
+  .searcher_form_visible {
+    opacity: 1;
+  }
+  
+  .searcher_box{
+    width: 15rem;
+    height: 2rem;
+  }
+  
+  .searcher_buton{
+    background-color: #fff;
+    color: #000;
+    border: 2px solid black;
+    height: 2.3rem;
+
+  }
+
+  .searcher_buton:hover{
+    background-color: #0755AA;;
+    color: #fff;
+    border: 2px solid #0755AA;
+  }

@@ -1,0 +1,46 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+}
+
+.navbar_principal{
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    align-items: center;  
+}
+.navbar_item{
+    font-family: 'Bebas Neue', sans-serif;
+    color: #fff;
+    font-size: 1.8rem;
+    transition: .3seg;
+}
+.navbar_item:hover{
+    color: #0755AA;
+    cursor: pointer;
+}
+
+.navbar_secundario{
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    align-items: center; 
+    color: #fff;
+}
+
+.logo_Tecflix{
+    width: 10rem;
+}
+
+.logo_Lupa{
+    width: 3rem;
+    padding-top: .5rem;
+}
+
+.search_box{
+    display: flex;
+    align-items: center;
+}

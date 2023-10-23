@@ -1,0 +1,85 @@
+/* Reset CSS */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove default padding */
+p {
+  padding: 0;
+}
+
+/* Set default font family and arial sizing */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* Reset heading margin */
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+/* Reset list styles */
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Reset hyperlink styles */
+a {
+  text-decoration: none;
+}
+
+/* Remove underline on anchor hover, but keep the color */
+a:hover {
+  text-decoration: none;
+}
+
+/* Remove default button styling */
+button {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Remove default input and textarea styles */
+input, textarea {
+  border: none;
+  outline: none;
+}
+
+/* Remove default blockquote styles */
+blockquote {
+  quotes: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove default table spacing */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
