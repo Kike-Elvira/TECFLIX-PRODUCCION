@@ -3,7 +3,7 @@ import Logo from "../../assets/img/logos/Logo TECFLIX.png";
 import Logo_Lupa from "../../assets/img/logos/lupa.png";
 import Searcher from "../searcher/Searcher";
 const Header = (props) => {
-  const { handleSearch, handleaNoSearch, isHover } = props;
+  const { handleSearch, isHover } = props;
 
   return (
     <div className="navbar">

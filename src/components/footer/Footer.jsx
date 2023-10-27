@@ -1,8 +1,9 @@
 import React from "react";
 import ".//Footer.css"
-const Footer = () =>{
+const Footer = (props) =>{
+    const {handleaNoSearch} = props
     return(
-        <footer className="footer_box">
+        <footer className="footer_box" onClick={handleaNoSearch}>
             <h2>Power By: RISE DEVELOPERS</h2>
         </footer>
     );
