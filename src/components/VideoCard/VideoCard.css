@@ -10,8 +10,13 @@
 
 .videocard_image{
     width: 20rem;
+    cursor: pointer;
 }
 
 .videocard_description{
+
+}
+
+.videocard_image:hover{
 
 }

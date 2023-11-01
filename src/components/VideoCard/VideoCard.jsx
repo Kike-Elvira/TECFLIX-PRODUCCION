@@ -1,29 +1,56 @@
 import React from "react";
 import ".//VideoCard.css";
-import imagen4 from "../../assets/img/portadas/portada4.png"
-import imagen3 from "../../assets/img/portadas/portada3.png"
-import imagen2 from "../../assets/img/portadas/portada2.jpg"
-import imagen1 from "../../assets/img/portadas/portada1.png"
+import { Link } from "react-router-dom";
+import FNAF from "../../assets/img/portadas/FNAF.jpg"
+import DBSB from "../../assets/img/portadas/Dragon Ball Broly.jpg"
+import DTP from "../../assets/img/portadas/Detective Pikachu.jpeg"
+import ETPC from "../../assets/img/portadas/El Tiempo Contigo.jpg"
+import EEC from "../../assets/img/portadas/El Exorcista Creyentes.jpg"
+import JUWD from "../../assets/img/portadas/Mundo jurasico.jpg"
+import SAWX from "../../assets/img/portadas/Saw X.jpg"
+import SPAS from "../../assets/img/portadas/Spiderman A traves del spiderverso.jpg"
+import SPNU from "../../assets/img/portadas/Spider-Man Un Nuevo Universo.jpeg"
+import YONM from "../../assets/img/portadas/Your Name.jpe"
 const VideoCard = (props) => {
-  const { Titulo, Descripcion, image, id } = props;
-  let imageSrc = `../../assets/img/portadas/${image}`;
-  if (image==="portada4") {
-    imageSrc = imagen4
+  const { Titulo, Descripcion, Miniatura, Duracion, Fecha, Genero, Director, IDContenido } = props;
+  let imageSrc;
+  if (Miniatura==="FNAF.jpg") {
+    imageSrc = FNAF
   }
-  if (image==="portada3") {
-    imageSrc = imagen3
+  if (Miniatura==="Dragon Ball Broly.jpg") {
+    imageSrc = DBSB
   }
-  if (image==="portada2") {
-    imageSrc = imagen2
+  if (Miniatura==="Detective Pikachu.jpeg") {
+    imageSrc = DTP
   }
-  if (image==="portada1") {
-    imageSrc = imagen1
+  if (Miniatura==="El Tiempo Contigo.jpg") {
+    imageSrc = ETPC
   }
+  if (Miniatura==="El Exorcista Creyentes.jpg") {
+    imageSrc = EEC
+  }
+  if (Miniatura==="Mundo jurasico.jpg") {
+    imageSrc = JUWD
+  }
+  if (Miniatura==="Saw X.jpg") {
+    imageSrc = SAWX
+  }
+  if (Miniatura==="Spiderman A traves del spiderverso.jpg") {
+    imageSrc = SPAS
+  }
+  if (Miniatura==="Spider-Man Un Nuevo Universo.jpeg") {
+    imageSrc = SPNU
+  }
+  if (Miniatura==="Your Name.jpe") {
+    imageSrc = YONM
+  }
+
   return (
-    <div className="videocar_box">
+    <div className="videocar_box" >
       <h2 className="videocard_title">{Titulo}</h2>
-      <img className="videocard_image" src={imageSrc} alt="Miniatura" />
-      <h3 className="videocard_description">{Descripcion}</h3>
+      <Link to={`/videoPlayer/${Titulo}`}>
+        <img className="videocard_image" src={imageSrc} alt={Titulo} />
+      </Link>
     </div>
   );
 };

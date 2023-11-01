@@ -1,25 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 function Register() {
-  const [nombre, setNombre] = useState('');
-  const [email, setEmail] = useState('');
-  const [contrasena, setContrasena] = useState('');
+  const [nombre, setNombre] = useState("");
+  const [email, setEmail] = useState("");
+  const [contrasena, setContrasena] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleRegistro = (e) => {
+  const handleRegistro = async (e) => {
     e.preventDefault();
-    // Aquí puedes agregar la lógica para enviar los datos al servidor y manejar el registro.
-    // Normalmente, se enviarían los datos a través de una solicitud HTTP.
 
-    // Por ejemplo, podrías usar la función fetch para enviar los datos al servidor:
-    // fetch('/api/registro', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ nombre, email, contrasena })
-    // })
-    // .then(response => response.json())
-    // .then(data => {
-    //   // Maneja la respuesta del servidor, como redirección o mensajes de éxito/error.
-    // });
+    const userData = { nombre, email, contrasena };
+
+    try {
+      const response = await fetch("http://localhost:3001/usuarios/registro", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(userData),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        if (data.message === "Registro exitoso") {
+          // Registro exitoso, redirige al usuario a la página de inicio de sesión
+          window.location.href = "/login";
+        } else {
+          // Registro fallido, muestra un mensaje de error.
+          setErrorMessage(data.message);
+        }
+      } else {
+        // Maneja errores HTTP
+        setErrorMessage("Error en la solicitud");
+      }
+    } catch (error) {
+      console.error("Error de conexión:", error);
+      setErrorMessage("Error de conexión");
+    }
   };
 
   return (
@@ -63,6 +78,7 @@ function Register() {
           <button type="submit">Registrarse</button>
         </div>
       </form>
+      {errorMessage && <p>{errorMessage}</p>}
     </div>
   );
 }

@@ -2,9 +2,16 @@ import ".//Header.css";
 import Logo from "../../assets/img/logos/Logo TECFLIX.png";
 import Logo_Lupa from "../../assets/img/logos/lupa.png";
 import Searcher from "../searcher/Searcher";
+import { useNavigate } from "react-router-dom";
 const Header = (props) => {
   const { handleSearch, isHover } = props;
-
+  // Cerrar sesión y eliminar el token
+  //const {cerrarSesion} = props
+  const navigate = useNavigate();
+  const cerrarSesion = () => {
+    localStorage.removeItem('token');
+    navigate('/login'); // Redirige al usuario a la página de inicio de sesión
+  };
   return (
     <div className="navbar">
       <img src={Logo} className="logo_Tecflix" alt="TECFLIX" />
@@ -28,7 +35,7 @@ const Header = (props) => {
         </div>
 
         <li className="navbar_item">Cuenta</li>
-        <li className="navbar_item">Cerrar Sesion</li>
+        <li className="navbar_item" onClick={cerrarSesion} >Cerrar Sesion</li>
       </ul>
     </div>
   );
