@@ -10,6 +10,8 @@ import Login from "./components/login/Login";
 import Register from "./components/register/Register";
 import axios from "axios";
 import VideoPlayer from "./components/videoPlayer/VideoPlayer";
+import Catalogo from "./components/catalogo/Catalogo";
+import ContenidoCatalogo from "./components/contenidoCatalogo/ContenidoCatalogo";
 
 function App() {
   const [isLogin, setIsLogin] = useState(true);
@@ -73,6 +75,8 @@ function App() {
           }
         />
         <Route path="/videoPlayer/:Titulo" element={<VideoPlayer />} />
+        <Route path="/catalogo" element={<Catalogo></Catalogo>}></Route>
+        <Route path="/contenido_catalogo/:Nombre" element={<ContenidoCatalogo></ContenidoCatalogo>}></Route>
       </Routes>
     </Router>
   );

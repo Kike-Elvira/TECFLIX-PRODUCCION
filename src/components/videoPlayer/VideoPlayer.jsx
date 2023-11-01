@@ -3,11 +3,11 @@ import ReactPlayer from "react-player";
 import "./VideoPlayer.css"
 import Footer from "../footer/Footer";
 import { useParams } from "react-router-dom";
+import Header from "../header/Header";
 const VideoPlayer = (props) => {
   const { Titulo } = useParams();
   const [videoUrl, setVideoUrl] = useState(null);
   let urlVideo ="";
-  console.log(Titulo);
   if(Titulo === "Five Nights at Freddy's"){
     urlVideo = "http://localhost:3001/video/Trailer%20FNAF.mp4"
   }
@@ -60,6 +60,7 @@ const VideoPlayer = (props) => {
 
   return (
     <>
+    <Header></Header>
     <div className="ReactPlayer">
       {videoUrl ? (
         <ReactPlayer 

@@ -2,7 +2,7 @@ import ".//Header.css";
 import Logo from "../../assets/img/logos/Logo TECFLIX.png";
 import Logo_Lupa from "../../assets/img/logos/lupa.png";
 import Searcher from "../searcher/Searcher";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Header = (props) => {
   const { handleSearch, isHover } = props;
   // Cerrar sesión y eliminar el token
@@ -16,8 +16,12 @@ const Header = (props) => {
     <div className="navbar">
       <img src={Logo} className="logo_Tecflix" alt="TECFLIX" />
       <ul className="navbar_principal">
+        <Link to="/contenido">
         <li className="navbar_item">Home</li>
+        </Link>
+        <Link to ="/catalogo">
         <li className="navbar_item">Catalogo</li>
+        </Link>
         <li className="navbar_item">Contenido</li>
       </ul>
 

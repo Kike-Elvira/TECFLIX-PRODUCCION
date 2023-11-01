@@ -69,7 +69,7 @@ const Login = () => {
       </form>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
       <p>
-        ¿No tienes una cuenta? <a href="/register">Regístrate aquí</a>
+        ¿No tienes una cuenta? <a href="/registro">Regístrate aquí</a>
       </p>
     </div>
   );
