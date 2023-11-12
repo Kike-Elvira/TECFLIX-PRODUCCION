@@ -10,7 +10,7 @@ const Login = () => {
 
     // Realiza la solicitud al backend para el inicio de sesión
     try {
-      const response = await fetch("http://localhost:3001/usuarios/login", {
+      const response = await fetch("http://192.168.0.65:3001/usuarios/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

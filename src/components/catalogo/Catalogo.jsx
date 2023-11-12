@@ -9,7 +9,7 @@ const Catalogo = () => {
     const [data,setData] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3001/videos/catalogo')
+        axios.get('http://192.168.0.65:3001/videos/catalogo')
           .then((response) => {
             console.log(response)
             const catalogos = response.data;

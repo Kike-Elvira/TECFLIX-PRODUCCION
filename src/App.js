@@ -24,7 +24,7 @@ function App() {
         if (token) {
           // Hacer una solicitud al backend para verificar el estado de autenticación
           const response = await axios.get(
-            "http://localhost:3001/verificar-autenticacion",
+            "http://192.168.0.65:3001/verificar-autenticacion",
             {
               headers: {
                 Authorization: `Bearer ${token}`,

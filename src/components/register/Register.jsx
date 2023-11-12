@@ -12,7 +12,7 @@ function Register() {
     const userData = { nombre, email, contrasena };
 
     try {
-      const response = await fetch("http://localhost:3001/usuarios/registro", {
+      const response = await fetch("http://192.168.0.65:3001/usuarios/registro", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(userData),

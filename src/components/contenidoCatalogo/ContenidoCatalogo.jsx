@@ -22,13 +22,13 @@ const ContenidoCatalogo = (props) => {
   let urlCatalogo="";
 
   if(Nombre === "Super Heroes"){
-    urlCatalogo = 'http://localhost:3001/videos/catalogo_super';
+    urlCatalogo = 'http://192.168.0.65:3001/videos/catalogo_super';
   }
   if(Nombre === "Anime"){
-    urlCatalogo = 'http://localhost:3001/videos/catalogo_anime';
+    urlCatalogo = 'http://192.168.0.65:3001/videos/catalogo_anime';
   }
   if(Nombre === "Terror"){
-    urlCatalogo = 'http://localhost:3001/videos/catalogo_terror';
+    urlCatalogo = 'http://192.168.0.65:3001/videos/catalogo_terror';
   }
 
 console.log(urlCatalogo);
