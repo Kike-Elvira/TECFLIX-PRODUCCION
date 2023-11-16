@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ".//Login.css";
+import src from "../../assets/img/logos/Logo TECFLIX.png";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
@@ -25,6 +26,7 @@ const Login = () => {
 
         // Guarda el token en el Local Storage
         localStorage.setItem("token", token);
+        localStorage.setItem("correo",email);
         
         window.location.href = "/"; // Reemplaza '/dashboard' con la ruta adecuada
       } else {
@@ -38,9 +40,14 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container">
+    <>
+    <div className="fondo">
+    <div className="logo">
+      <img className="logoPrincipal" src={src} alt= {src} />
+    </div>
+    <div className="login-container netflix-style">
       <h2>Iniciar sesión</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="netflix-form">
         <div className="form-group">
           <label htmlFor="email">Correo Electrónico:</label>
           <input
@@ -51,6 +58,7 @@ const Login = () => {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            className="netflix-input"
           />
         </div>
         <div className="form-group">
@@ -63,16 +71,24 @@ const Login = () => {
             required
             value={pass}
             onChange={(e) => setPass(e.target.value)}
+            className="netflix-input"
           />
         </div>
-        <button type="submit">Iniciar sesión</button>
+        <button type="submit" className="buttonBorrar">
+          Iniciar sesión
+        </button>
       </form>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
       <p>
         ¿No tienes una cuenta? <a href="/registro">Regístrate aquí</a>
       </p>
     </div>
+    </div>
+    </>
   );
+  
+
+  
 };
 
 export default Login;

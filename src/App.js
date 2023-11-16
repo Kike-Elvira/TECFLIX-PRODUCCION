@@ -12,6 +12,7 @@ import axios from "axios";
 import VideoPlayer from "./components/videoPlayer/VideoPlayer";
 import Catalogo from "./components/catalogo/Catalogo";
 import ContenidoCatalogo from "./components/contenidoCatalogo/ContenidoCatalogo";
+import Cuenta from "./components/cuenta/Cuenta";
 
 function App() {
   const [isLogin, setIsLogin] = useState(true);
@@ -77,6 +78,7 @@ function App() {
         <Route path="/videoPlayer/:Titulo" element={<VideoPlayer />} />
         <Route path="/catalogo" element={<Catalogo></Catalogo>}></Route>
         <Route path="/contenido_catalogo/:Nombre" element={<ContenidoCatalogo></ContenidoCatalogo>}></Route>
+        <Route path="/cuenta" element={<Cuenta></Cuenta>}></Route>
       </Routes>
     </Router>
   );

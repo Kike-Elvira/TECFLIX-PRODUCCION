@@ -1,22 +1,33 @@
-.videocar_box{
+.videocard_box {
     display: flex;
     flex-direction: column;
     text-align: center;
-}
-
-.videocard_title{
-
-}
-
-.videocard_image{
+    flex-wrap: wrap;
+  }
+  
+  .videocard_title {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .videocard_image {
     width: 20rem;
     cursor: pointer;
-}
-
-.videocard_description{
-
-}
-
-.videocard_image:hover{
-
-}
+    transition: transform 0.3s ease-in-out, padding-top 0.3s ease-in-out;
+  }
+  .description_overlay {
+    text-align: center;
+    width: 20rem;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  .videocard_box:hover .videocard_image {
+    transform: scale(1.1);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .videocard_box:hover .videocard_title {
+    transform: scale(1.1);
+  }
+  .videocard_box:hover .description_overlay {
+      opacity: 1;
+  }

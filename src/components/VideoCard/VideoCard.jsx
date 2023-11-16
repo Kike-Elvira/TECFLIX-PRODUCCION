@@ -11,6 +11,7 @@ import SAWX from "../../assets/img/portadas/Saw X.jpg"
 import SPAS from "../../assets/img/portadas/Spiderman A traves del spiderverso.jpg"
 import SPNU from "../../assets/img/portadas/Spider-Man Un Nuevo Universo.jpeg"
 import YONM from "../../assets/img/portadas/Your Name.jpe"
+import { useState } from "react";
 const VideoCard = (props) => {
   const { Titulo, Descripcion, Miniatura, Duracion, Fecha, Genero, Director, IDContenido } = props;
   let imageSrc;
@@ -44,13 +45,19 @@ const VideoCard = (props) => {
   if (Miniatura==="Your Name.jpe") {
     imageSrc = YONM
   }
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="videocar_box" >
+    <div className="videocard_box" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
       <h2 className="videocard_title">{Titulo}</h2>
       <Link to={`/videoPlayer/${Titulo}`}>
-        <img className="videocard_image" src={imageSrc} alt={Titulo} />
+        <img className="videocard_image" src={imageSrc} alt={Titulo}/>
       </Link>
+      {isHovered && (
+            <div className="description_overlay">
+              <p>{Descripcion}</p>
+            </div>
+          )}
     </div>
   );
 };
